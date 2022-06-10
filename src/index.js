@@ -96,10 +96,6 @@ function renderBooks() {
       bookCreator("pages", book.pages),
       bookCreator("read", book.read)
     );
-    // cont.appendChild(bookCreator("author", book.author));
-    // cont.appendChild(bookCreator("title", book.title));
-    // cont.appendChild(bookCreator("pages", book.pages));
-    // cont.appendChild(bookCreator("read", book.read));
     let deleteBtn = document.createElement("button");
     deleteBtn.addEventListener("click", deleteBook);
     cont.appendChild(deleteBtn);
@@ -115,7 +111,11 @@ function bookCreator(name, val) {
   elem.append(child1, child2);
   return elem;
 }
-const BookFactory = (author, title, pages, read) => {
+const BookFactory = (auth, tit, pag, rea) => {
+  let author = auth;
+  let title = tit;
+  let pages = pag;
+  let read = rea;
   return {
     author,
     title,
