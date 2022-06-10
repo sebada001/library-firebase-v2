@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library v2</title>
+    <script src="bundle.js" defer></script>
+</head>
+<body>
+    <div class="modal">
+        <div>
+            <label for="title">Book Title</label>
+            <input type="text" id="title">
+        </div>
+        <div>
+            <label for="author">Book Author</label>
+            <input type="text" id="author">
+        </div>
+        <div>
+            <label for="pages">Pages</label>
+            <input type="text" id="pages">
+        </div>
+        <div>
+            <label for="read">Read status</label>
+            <input type="text" id="read">
+        </div>
+        <button id="ok">Ok</button>
+    </div>
+    <div class="shade"></div>
+    <div class="parent">
+        <div class="controls">
+            <button class="add-book">Add Book</button>
+        </div>
+        <div id="container"></div>
+    </div>
+    <div class="container-buttons">
+        <button id="print">Print Library in Database</button>
+        <button id="print-local">Print Local Library</button>
+        <button id="update">Update Library in Database</button>
+        <button id="local">Update Local Library from Database</button>
+    </div>
+</body>
+</html>
