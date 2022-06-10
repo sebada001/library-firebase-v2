@@ -1,14 +1,6 @@
 import "./style.css";
 import { initializeApp } from "firebase/app";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  getDoc,
-  addDoc,
-  setDoc,
-  doc,
-} from "firebase/firestore/lite";
+import { getFirestore, getDoc, setDoc, doc } from "firebase/firestore/lite";
 const firebaseConfig = {
   apiKey: "AIzaSyDLJ_Tcz9g9QdnnsI9_LEHSCh6tIuyfHAY",
   authDomain: "library-firebase-v2.firebaseapp.com",
@@ -51,8 +43,6 @@ function myLibraryObject() {
 }
 async function setLibrary() {
   const myLibTest = myLibraryObject();
-  //   console.log(myLibTest);
-  //   console.log("this^");
   try {
     await setDoc(doc(db, "library", "publicLibrary"), myLibTest);
   } catch (e) {
@@ -100,10 +90,16 @@ function renderBooks() {
     let cont = document.createElement("div");
     cont.classList.add("book-item");
     cont.id = index;
-    cont.appendChild(bookCreator("author", book.author));
-    cont.appendChild(bookCreator("title", book.title));
-    cont.appendChild(bookCreator("pages", book.pages));
-    cont.appendChild(bookCreator("read", book.read));
+    cont.append(
+      bookCreator("author", book.author),
+      bookCreator("title", book.title),
+      bookCreator("pages", book.pages),
+      bookCreator("read", book.read)
+    );
+    // cont.appendChild(bookCreator("author", book.author));
+    // cont.appendChild(bookCreator("title", book.title));
+    // cont.appendChild(bookCreator("pages", book.pages));
+    // cont.appendChild(bookCreator("read", book.read));
     let deleteBtn = document.createElement("button");
     deleteBtn.addEventListener("click", deleteBook);
     cont.appendChild(deleteBtn);
@@ -143,5 +139,4 @@ function allFields() {
 function deleteBook(e) {
   myLibrary.splice(e.target.parentElement.id, 1);
   renderBooks();
-  // setToDb(myLibrary);
 }
