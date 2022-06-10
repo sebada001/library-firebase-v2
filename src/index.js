@@ -100,11 +100,15 @@ function renderBooks() {
     let cont = document.createElement("div");
     cont.classList.add("book-item");
     cont.id = index;
-    let entries = Object.keys(book);
-    for (let i = 0; i < entries.length; i++) {
-      let element = bookCreator(entries[i], book);
-      cont.appendChild(element);
-    }
+    cont.appendChild(bookCreator(book.author, book));
+    cont.appendChild(bookCreator(book.title, book));
+    cont.appendChild(bookCreator(book.pages, book));
+    cont.appendChild(bookCreator(book.read, book));
+    // let entries = Object.keys(book);
+    // for (let i = 0; i < entries.length; i++) {
+    //   let element = bookCreator(entries[i], book);
+    //   cont.appendChild(element);
+    // }
     let deleteBtn = document.createElement("button");
     deleteBtn.addEventListener("click", deleteBook);
     cont.appendChild(deleteBtn);
@@ -135,8 +139,8 @@ function deleteChildren(parent) {
 }
 function allFields() {
   return author.value != "" &&
-    pages.value != "" &&
     title.value != "" &&
+    pages.value != "" &&
     read.value != ""
     ? true
     : false;
