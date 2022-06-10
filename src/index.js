@@ -100,26 +100,21 @@ function renderBooks() {
     let cont = document.createElement("div");
     cont.classList.add("book-item");
     cont.id = index;
-    cont.appendChild(bookCreator(book.author, book));
-    cont.appendChild(bookCreator(book.title, book));
-    cont.appendChild(bookCreator(book.pages, book));
-    cont.appendChild(bookCreator(book.read, book));
-    // let entries = Object.keys(book);
-    // for (let i = 0; i < entries.length; i++) {
-    //   let element = bookCreator(entries[i], book);
-    //   cont.appendChild(element);
-    // }
+    cont.appendChild(bookCreator("author", book.author));
+    cont.appendChild(bookCreator("title", book.title));
+    cont.appendChild(bookCreator("pages", book.pages));
+    cont.appendChild(bookCreator("read", book.read));
     let deleteBtn = document.createElement("button");
     deleteBtn.addEventListener("click", deleteBook);
     cont.appendChild(deleteBtn);
     container.appendChild(cont);
   });
 }
-function bookCreator(entry, book) {
+function bookCreator(name, val) {
   let child1 = document.createElement("div");
-  child1.textContent = `${entry}:`;
+  child1.textContent = `${name}:`;
   let child2 = document.createElement("div");
-  child2.textContent = `${book[entry]}`;
+  child2.textContent = `${val}`;
   let elem = document.createElement("div");
   elem.append(child1, child2);
   return elem;
