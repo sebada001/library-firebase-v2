@@ -1,0 +1,95 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Joan', serif;
+    color:rgb(93, 12, 12);
+}
+body{
+    background: linear-gradient(tan, rgb(96, 66, 34));
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: column;
+}
+.modal{
+    background-color: rgb(238, 238, 238);
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px brown solid;
+    height: 440px;
+    width: 400px;
+    font-size: 18px;
+    gap: 40px;
+    margin-top: 65px;
+    z-index: 3;
+}
+.shade{
+    position: absolute;
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.301);
+    z-index: 2;
+}
+.modal div{
+    display: flex;
+    gap: 20px;
+    width: 300px;
+    justify-content: space-between;
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+button{
+    border: none;
+    padding: 3px 5px;
+    font-size: 24px;
+    border: 3px brown solid;
+    background-color: rgb(238, 238, 238);
+}
+#container{
+    border: 3px brown solid;
+    min-height: 400px;
+    width: 700px;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.book-item{
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid red 2px;
+}
+.book-item > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    width: 140px;
+}
+.book-item > div > div{
+    min-width: 40px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+}
+.container-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
